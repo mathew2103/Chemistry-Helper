@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chem Helper</title>
+    </head>
+    <body>
+        <form action="index.js">
+            <label for="">Reactant</label>
+            <input type="text" name="reactant" id="reactant">
+            <br>
+            <br>
+            <label for="">Product</label>
+            <input type="text" name="product" id="product">
+            <input type="button" value="Submit" onclick="findReagents(this.form)">
+        </form>
+        <p id="error"></p>
+        <ul id="reagent-list"></ul>
+
+        <script src="./index.js"></script>
+    </body>
+</html>
