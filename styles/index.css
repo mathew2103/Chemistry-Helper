@@ -1,0 +1,67 @@
+
+body {
+    background-color: rgba(43, 43, 43, 0.795);
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0 0 0 0;
+    background-image: url('');
+    scroll-behavior: smooth;
+}
+
+.banner {
+    background-color: black;
+    width: 30%;
+    max-width: 30%;
+    min-width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 37.5%;
+    text-align: center;
+    font-size: 50%;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    flex-direction: column;
+}
+
+form{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    width: 20rem;
+    height: 20px;
+    background-color: rgb(43, 43, 43);
+    border: 2px solid rgb(15, 32, 48);
+    color: white;
+}
+
+input:hover {
+    box-shadow: 0px 0px 4px rgb(255, 255, 255);
+    transition: all 0.5s;
+}
+
+#reagent-list{
+    margin: 2% 2% 2% 2% ;
+    padding-left: 25px;
+}
+
+#submitButton {
+    width: 10rem;
+    color: white;
+}

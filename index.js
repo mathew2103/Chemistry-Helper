@@ -574,7 +574,7 @@ function findReagents(form) {
     try {
         path = find_conversion_path(reactant, product)
     } catch (e) {
-        return errorP.innerText = "HELLO"
+        return errorP.innerText = "ERROR"
     }
 
     // const path = find_conversion_path(document.getElementById("reactant").innerText, document.getElementById("product").innerText)
@@ -585,6 +585,9 @@ function findReagents(form) {
         li.innerText = `${values[0]} + ${values[1]} = ${values[2]}`
         reagentList.appendChild(li)
     }
+
+
+    location.href = "#reagent-list"
 }
 
 function find_conversion_path(starting_compound, target_compound) {

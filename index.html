@@ -5,20 +5,40 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Chem Helper</title>
+        <link rel="stylesheet" href="styles/index.css">
     </head>
     <body>
-        <form action="index.js">
-            <label for="">Reactant</label>
-            <input type="text" name="reactant" id="reactant">
-            <br>
-            <br>
-            <label for="">Product</label>
-            <input type="text" name="product" id="product">
-            <input type="button" value="Submit" onclick="findReagents(this.form)">
-        </form>
-        <p id="error"></p>
-        <ul id="reagent-list"></ul>
+        <!-- Banner Start -->
+        <div class="banner">
+            <h1>Your Chemist</h1>
+        </div>
+        <!-- Banner End -->
 
+
+        <div class="container">
+            <form action="index.js">
+                <label for="">Reactant</label>
+                <br>
+                <input type="text" name="reactant" id="reactant">
+                <br>
+                <label for="">Product</label>
+                <br>
+                <input type="text" name="product" id="product">
+                <br>
+                <br>
+                <input type="button" value="Submit" onclick="findReagents(this.form)" id="submitButton">
+            </form>
+            <p id="error"></p>
+
+            <ul id="reagent-list"></ul>
+            
+            
+        </div>
+
+        <div class="footer">
+            <p>Made by Mathew George</p>
+        </div>
+        
         <script src="./index.js"></script>
     </body>
 </html>
