@@ -559,6 +559,18 @@ const reactions = {
 }
 const reagentList = document.getElementById('reagent-list');
 const errorP = document.getElementById('error');
+const toFindText = document.getElementById('toFindText');
+const product = document.getElementById('product');
+
+/**
+ * 
+ * @param {string} innerText 
+ * @param {string} placeHolder
+ */
+function changeText(innerText, placeholder) {
+    toFindText.innerText = innerText
+    product.setAttribute("placeholder", placeholder)
+}
 
 function findReagents(form) {
     errorP.innerText = ""
@@ -566,23 +578,35 @@ function findReagents(form) {
         reagentList.removeChild(reagentList.firstChild)
     }
     let reactant = form.reactant.value.toLowerCase();
-    let product = form.product.value.toLowerCase();
+    let product = form.product.value;
 
-    if (!reactant || !product) return errorP.innerText = "Enter both reactant and product.."
+    if (!reactant || !product) return errorP.innerText = `Enter both Reactant and ${toFindText.innerText}..`
     else if ((reactant == product)) return errorP.innerText = "What are you trying to convert?"
-    let path = "";
-    try {
-        path = find_conversion_path(reactant, product)
-    } catch (e) {
-        return errorP.innerText = "ERROR"
-    }
 
-    // const path = find_conversion_path(document.getElementById("reactant").innerText, document.getElementById("product").innerText)
+    console.log(toFindText.innerText)
+    if (toFindText.innerText == "Product") {
+        product = product.toLowerCase();
+        let path = "";
+        try {
+            path = find_conversion_path(reactant, product)
+        } catch (e) {
+            return errorP.innerText = "ERROR"
+        }
 
-    for (a of path) {
-        const li = document.createElement("li")
-        const values = a.split(',')
-        li.innerText = `${values[0]} + ${values[1]} = ${values[2]}`
+        // const path = find_conversion_path(document.getElementById("reactant").innerText, document.getElementById("product").innerText)
+
+        for (a of path) {
+            const li = document.createElement("li")
+            const values = a.split(',')
+            li.innerText = `${values[0]} + ${values[1]} = ${values[2]}`
+            reagentList.appendChild(li)
+        }
+
+    } else {
+        const li = document.createElement('li');
+        console.log(reactions[reactant])
+        li.innerText = reactions[reactant][product] ?? "Not Found"
+
         reagentList.appendChild(li)
     }
 

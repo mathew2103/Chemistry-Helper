@@ -8,36 +8,46 @@
         <link rel="stylesheet" href="styles/index.css">
     </head>
     <body>
-        <!-- Banner Start -->
-        <div class="banner">
-            <h1>Your Chemist</h1>
-        </div>
-        <!-- Banner End -->
-
+        
 
         <div class="container">
+            <!-- Banner Start -->
+            <div class="banner">
+                <h1>Your Chemist</h1>
+            </div> 
+        <!-- Banner End -->
+
             <form action="index.js">
+                <!-- <p>Enter the reactant that you have<br>and product that you want</p> -->
+                <p>What do you want me to find?</p>
+
+                <div class="radio-container">
+                    <input type="radio" name="mode" value="2" onclick="changeText('Product', 'Benzene')" checked>Reagent
+                    <input type="radio" name="mode" value="1" onclick="changeText('Reagent', 'O2')">Product [BETA]
+                    
+                </div>
+                <br>
+                    
                 <label for="">Reactant</label>
+                <input type="text" name="reactant" id="reactant" class="textinput" placeholder="Methane">
+                
                 <br>
-                <input type="text" name="reactant" id="reactant">
+                <label for="" id="toFindText">Product</label>
+                <input type="text" name="product" id="product" class="textinput" placeholder="Benzene">
                 <br>
-                <label for="">Product</label>
-                <br>
-                <input type="text" name="product" id="product">
-                <br>
-                <br>
-                <input type="button" value="Submit" onclick="findReagents(this.form)" id="submitButton">
+                <input type="button" value="Find" onclick="findReagents(this.form)" id="submitButton" class="textinput">
             </form>
             <p id="error"></p>
 
             <ul id="reagent-list"></ul>
             
+            <div class="footer">
+                <p>Developed by <a href="https://github.com/mathew2103">Mathew George</a><br>Original Design: <a href="https://clash-of-chem.vercel.app/">Clash of Chemistry</a></p>
+            </div>
             
         </div>
 
-        <div class="footer">
-            <p>Developed by Mathew George.<br>Original Design: <a href="https://clash-of-chem.vercel.app/">Clash of Chemistry</a></p>
-        </div>
+        
         
         <script src="./index.js"></script>
     </body>
